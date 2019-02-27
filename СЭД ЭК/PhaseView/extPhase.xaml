@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="СЭД_ЭК.extPhase"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:СЭД_ЭК"
+             mc:Ignorable="d" 
+             d:DesignHeight="600
+             " d:DesignWidth="960">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="98*"/>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="204*"/>
+            <RowDefinition Height="205*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" x:Name="lblDocName" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Height="71.312"  Width="450"
+            FontFamily="HelveticaNeueCyr"
+            FontSize="60"
+            FontWeight="Bold"
+            Foreground="#0b9aec" Margin="255,13.344">
+            <Label x:Name="lblDocName_Copy" Content="Название" 
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Height="71.312"  Width="450"
+                FontFamily="HelveticaNeueCyr"
+                FontSize="60"
+                FontWeight="Bold"
+                Foreground="#0b9aec"/>
+        </Label>
+        <local:dateBeg_End x:Name="mcntrlDates" Grid.Row="1"/>
+        <local:Description x:Name="mcntrlDesc" Grid.Row="2" Margin="0,0,0,0.885"/>
+        <ScrollViewer Grid.Row="3">
+            <DockPanel>
+                <Label Content="Список докуметов" HorizontalAlignment="Center"
+                Height="51.475"
+                VerticalAlignment="Top" Width="393.114"
+                FontFamily="HelveticaNeueCyr" FontSize="40" FontWeight="Bold"
+                Foreground="#0b9aec"/>
+            </DockPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

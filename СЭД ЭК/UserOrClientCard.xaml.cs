@@ -16,30 +16,23 @@ using System.Windows.Shapes;
 namespace СЭД_ЭК
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для UserOrClientCard.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UserOrClientCard : UserControl
     {
-        StartPage stP;
-        LoadScreen scP;
-        MainPage mainP;
-        public MainWindow()
+        public UserOrClientCard()
         {
             InitializeComponent();
         }
 
-        private bool OnFirstToSecondChange(object sender)
+        private void lblDelete_GotFocus(object sender, RoutedEventArgs e)
         {
-            this.Content = scP;
-            return true;
+
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void lblEdit_GotFocus(object sender, RoutedEventArgs e)
         {
-            stP = new StartPage();
-            scP = new LoadScreen();
-            Content = stP;
-            stP.ChPage += OnFirstToSecondChange;
+
         }
     }
 }

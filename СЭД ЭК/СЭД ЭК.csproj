@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +57,105 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhaseView\brPhase.xaml.cs">
+      <DependentUpon>brPhase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\dateBeg-End.xaml.cs">
+      <DependentUpon>dateBeg-End.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\Description.xaml.cs">
+      <DependentUpon>Description.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhaseView\extPhase.xaml.cs">
+      <DependentUpon>extPhase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsView\brProject.xaml.cs">
+      <DependentUpon>brProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsView\extProject.xaml.cs">
+      <DependentUpon>extProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\Buttons\btnCurveSmall.xaml.cs">
+      <DependentUpon>btnCurveSmall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DocsView\brDocument.xaml.cs">
+      <DependentUpon>brDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\Buttons\btnCurve.xaml.cs">
+      <DependentUpon>btnCurve.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DocsView\extDoc.xaml.cs">
+      <DependentUpon>extDoc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoadScreen.xaml.cs">
+      <DependentUpon>LoadScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\txtbxCurve.xaml.cs">
+      <DependentUpon>txtbxCurve.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartTab.xaml.cs">
+      <DependentUpon>StartTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabControl.xaml.cs">
+      <DependentUpon>TabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserOrClientCard.xaml.cs">
+      <DependentUpon>UserOrClientCard.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhaseView\brPhase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyControls\dateBeg-End.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyControls\Description.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhaseView\extPhase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProjectsView\brProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProjectsView\extProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyControls\Buttons\btnCurveSmall.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DocsView\brDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyControls\Buttons\btnCurve.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DocsView\extDoc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LoadScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +168,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyControls\txtbxCurve.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserOrClientCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

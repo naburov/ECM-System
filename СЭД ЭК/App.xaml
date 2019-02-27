@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:СЭД_ЭК"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        
     </Application.Resources>
 </Application>
