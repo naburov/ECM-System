@@ -34,12 +34,20 @@ namespace СЭД_ЭК
             return true;
         }
 
+        private bool OnSecondToMainChange(object sender)
+        {
+            this.Content = mainP;
+            return true;
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             stP = new StartPage();
             scP = new LoadScreen();
+            mainP = new MainPage();
             Content = stP;
             stP.ChPage += OnFirstToSecondChange;
+            scP.ChPage += OnSecondToMainChange;
         }
     }
 }

@@ -8,7 +8,7 @@
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="LoadScreen">
 
-    <Grid Background="#0B9AEC">
+    <Grid Background="#0B9AEC" GotFocus="Grid_GotFocus" MouseDown="Grid_MouseDown">
         <Label 
             Foreground="White"
                FontFamily="HelveticaNeueCyr"

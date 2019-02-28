@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:СЭД_ЭК"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="400" d:DesignWidth="600">
+    <Grid Height="400" VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="52*"/>
             <RowDefinition Height="59*"/>
@@ -19,59 +19,55 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="lblName" Content="Название" 
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" x:Name="lblName" Content="Название" 
             HorizontalAlignment="Center" VerticalAlignment="Center"
-            Height="71.312"  Width="450"
+            Height="72"  Width="450"
             FontFamily="HelveticaNeueCyr"
-            FontSize="60"
+            FontSize="40"
             FontWeight="Bold"
-            Foreground="#0b9aec" Margin="10,17.744,140,21.944" Grid.RowSpan="2"/>
+            Foreground="#0b9aec" Margin="10,21,140,18.2" Grid.RowSpan="2"/>
         <Label x:Name="lblEdit" GotFocus="lblEdit_GotFocus"  Content="Редактировать" 
-            Grid.Column="3" Margin="0,10,10,6.056"
+            Grid.Column="2" Margin="126,10,34,6"
             FontFamily="HelveticaNeueCyr"
-            FontSize="25"
+            FontSize="15"
             FontWeight="Light"            
-            Foreground="#0b9aec"/>
+            Foreground="#0b9aec" Grid.ColumnSpan="2"/>
         <Label x:Name="lblDelete" GotFocus="lblDelete_GotFocus"  Content="Удалить" 
-            Grid.Column="3" Margin="0,10,10,14.056"
+            Grid.Column="2" Margin="127,10,34,14.2"
             FontFamily="HelveticaNeueCyr"
-            FontSize="25"
+            FontSize="15"
             FontWeight="Light"            
-            Foreground="#0b9aec" Grid.Row="1"/>
+            Foreground="#0b9aec" Grid.Row="1" Grid.ColumnSpan="2"/>
         <Label Content="Телефон:" 
             HorizontalAlignment="Left" 
-            Height="56.557" Margin="10,29.934,0,0"
-            VerticalAlignment="Top" Width="180"
+            Height="57" Margin="10,29.8,0,0"
+            VerticalAlignment="Top" Width="197"
+            FontFamily="HelveticaNeueCyr"
+            FontSize="25"
+            FontWeight="Light"
+            Foreground="#0b9aec" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Label Content="" Name="lblPhone" Margin="61.6,0,0,66.8"
             FontFamily="HelveticaNeueCyr"
             FontSize="40"
             FontWeight="Light"
-            Foreground="#0b9aec" Grid.Row="2"/>
-        <Label Content="" Name="lblPhone" 
-            HorizontalAlignment="Left" 
-            Height="56.557" Margin="10,29.934,0,0"
-            VerticalAlignment="Top" Width="580"
-            FontFamily="HelveticaNeueCyr"
-            FontSize="40"
-            FontWeight="Light"
-            Foreground="#0b9aec" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
+            Foreground="#0b9aec" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Height="57" VerticalAlignment="Bottom"/>
         <Label Content="E-mail:" 
             HorizontalAlignment="Left" 
-            Height="56.557" Margin="10,86.491,0,0"
-            VerticalAlignment="Top" Width="180"
+            Height="56" Margin="10,86.8,0,0"
+            VerticalAlignment="Top" Width="158"
             FontFamily="HelveticaNeueCyr"
-            FontSize="40"
+            FontSize="25"
             FontWeight="Light"
-            Foreground="#0b9aec" Grid.Row="2"/>
+            Foreground="#0b9aec" Grid.Row="2" Grid.ColumnSpan="2"/>
         <Label Content="" x:Name="lblEmail" 
-            HorizontalAlignment="Left" 
-            Height="56.557" Margin="10,86.491,0,0"
-            VerticalAlignment="Top" Width="580"
+            Height="56" Margin="22.6,0,0,10.8"
+            VerticalAlignment="Bottom"
             FontFamily="HelveticaNeueCyr"
             FontSize="40"
             FontWeight="Light"
             Foreground="#0b9aec" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
-        <local:btnCurveSmall Text="Проекты" Grid.ColumnSpan="2" Margin="89.754,13.5,83.516,19.504" Grid.Row="3" Height="Auto" Width="Auto"/>
-        <local:btnCurveSmall Text="Документы" Grid.ColumnSpan="2" Margin="89.345,13.5,83.926,19.504" Grid.Row="3" Grid.Column="2" Height="Auto" Width="Auto"/>
+        <local:btnCurveSmall Text="Проекты" Margin="24,13.2,34.267,20" Grid.Row="3" Height="Auto" Width="Auto" Grid.ColumnSpan="2"/>
+        <local:btnCurveSmall Text="Документы" Margin="24.2,10.2,33.8,23" Grid.Row="3" Grid.Column="2" Height="Auto" Width="Auto" Grid.ColumnSpan="2"/>
 
     </Grid>
 </UserControl>

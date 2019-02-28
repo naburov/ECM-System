@@ -20,6 +20,7 @@ namespace СЭД_ЭК
     /// </summary>
     public partial class brDocument : UserControl
     {
+        public event ChangeTab ToExtDoc;
         public brDocument()
         {
             InitializeComponent();
@@ -35,6 +36,11 @@ namespace СЭД_ЭК
         private void lblShowMore_GotFocus(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnOpenDoc_GotFocus_1(object sender, RoutedEventArgs e)
+        {
+            ToExtDoc?.Invoke(this, this.Parent as TabItem);
         }
     }
 }

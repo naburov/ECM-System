@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="СЭД_ЭК.StartTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:СЭД_ЭК"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="940">
+    <Grid Name="grid" Height="400" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblToEmployees" MouseDown="lblToEmployees_MouseDown" GotFocus="lblToEmployees_GotFocus" Cursor="Hand" Content="к сотрудникам" 
+             HorizontalAlignment="Center" VerticalAlignment="Center"
+             Height="95"  Width="450"
+             FontFamily="HelveticaNeueCyr"
+             FontSize="60"
+             FontWeight="Bold"
+             Foreground="#0b9aec" Margin="-5,-5,5,10"/>
+        <Label x:Name="lblToProjects" MouseDown="lblToProjects_MouseDown" GotFocus="lblToProjects_GotFocus" Cursor="Hand" Content="к проектам" 
+             HorizontalAlignment="Center" VerticalAlignment="Center"
+             Height="95"  Width="450"
+             FontFamily="HelveticaNeueCyr"
+             FontSize="60"
+             FontWeight="Bold"
+             Foreground="#0b9aec" Margin="-5,5,5,0" Grid.Row="1"/>
+        <Label x:Name="lblToDocs" MouseDown="lblToDocs_MouseDown" GotFocus="lblToDocs_GotFocus" Cursor="Hand" Content="к документам" 
+             HorizontalAlignment="Center" VerticalAlignment="Center"
+             Height="95"  Width="450"
+             FontFamily="HelveticaNeueCyr"
+             FontSize="60"
+             FontWeight="Bold"
+             Foreground="#0b9aec" Margin="-10,10,10,95" Grid.Row="2" Grid.RowSpan="2"/>
+        <Label x:Name="lblToClients" MouseDown="lblToClients_MouseDown" GotFocus="lblToClients_GotFocus" Cursor="Hand" Content="к заказчикам" 
+             HorizontalAlignment="Center" VerticalAlignment="Center"
+             Height="95"  Width="450"
+             FontFamily="HelveticaNeueCyr"
+             FontSize="60"
+             FontWeight="Bold"
+             Foreground="#0b9aec" Margin="-10,5,10,0" Grid.Row="3"/>
+
+    </Grid>
+</UserControl>

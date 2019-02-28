@@ -25,6 +25,10 @@ namespace СЭД_ЭК
             InitializeComponent();
         }
 
+        public string empOrClientName { get => lblName.Content.ToString(); set => lblName.Content = value; }
+        public string phone { get => lblPhone.Content.ToString(); set => lblPhone.Content = value; }
+        public string email { get => lblEmail.Content.ToString(); set => lblEmail.Content = value; }
+
         private void lblDelete_GotFocus(object sender, RoutedEventArgs e)
         {
 

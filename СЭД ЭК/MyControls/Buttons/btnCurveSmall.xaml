@@ -22,6 +22,6 @@
                Loaded="lbl_Loaded"
                FontFamily="HelveticaNeueCyr"
                FontWeight="Light"
-               FontSize="30" Margin="14.527,21.275,10,18.075" Width="195.473"/>
+               FontSize="20" Margin="14.527,21.275,10,18.075" Width="195.473"/>
     </Grid>
 </UserControl>

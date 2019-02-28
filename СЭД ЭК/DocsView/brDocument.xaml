@@ -54,7 +54,7 @@
                 <ColumnDefinition Width="81*"/>
                 <ColumnDefinition Width="79*"/>
             </Grid.ColumnDefinitions>
-            <local:btnCurveSmall x:Name="btnOpenDoc" GotFocus="btnOpenDoc_GotFocus" Grid.Column="0" Text="Открыть" FontSize="30" Margin="75.924,33.756,87.013,47.421" Height="Auto" Width="Auto"/>
+            <local:btnCurveSmall x:Name="btnOpenDoc" GotFocus="btnOpenDoc_GotFocus_1" Grid.Column="0" Text="Открыть" FontSize="30" Margin="75.924,33.756,87.013,47.421" Height="Auto" Width="Auto"/>
             <Label Name="lblShowMore" GotFocus="lblShowMore_GotFocus" Content="Подробнее" 
                    Grid.Column="1" Margin="58.605,63.726,128.811,67.897"
             FontFamily="HelveticaNeueCyr"

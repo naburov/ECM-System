@@ -16,24 +16,13 @@ using System.Windows.Shapes;
 namespace СЭД_ЭК
 {
     /// <summary>
-    /// Логика взаимодействия для LoadScreen.xaml
+    /// Логика взаимодействия для DocsTab.xaml
     /// </summary>
-    public partial class LoadScreen : Page
+    public partial class DocsTab : UserControl
     {
-        public event ChangePage ChPage;
-        public LoadScreen()
+        public DocsTab()
         {
             InitializeComponent();
-        }
-
-        private void Grid_GotFocus(object sender, RoutedEventArgs e)
-        {
-            ChPage?.Invoke(this);
-        }
-
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            ChPage?.Invoke(this);
         }
     }
 }

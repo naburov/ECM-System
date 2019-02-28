@@ -8,12 +8,16 @@
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="MainPage">
 
-    <Grid>
+    <Grid Background="#0b9aec">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <local:MyTabControl Grid.Column="0"></local:MyTabControl>
-        <local:MyTabControl Grid.Column="1"></local:MyTabControl>
+        <local:MyTabControl Grid.Column="0" Grid.Row="1"/>
+        <local:MyTabControl Grid.Column="1" Grid.Row="1"></local:MyTabControl>
     </Grid>
 </Page>

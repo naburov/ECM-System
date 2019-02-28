@@ -5,16 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:СЭД_ЭК"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="960">
+             d:DesignHeight="900" d:DesignWidth="600">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="FontFamily" Value="HelveticaNeueCyr"></Setter>
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Foreground" Value="#0b9aec"/>
+        </Style>
+
+    </UserControl.Resources>
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="1085.6" Margin="-4,-5.6,0,0" VerticalAlignment="Top" Width="964">
-            <TabItem Header="TabItem">
-                <Grid Background="#FFFFFF"/>
-            </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFFFFF"/>
-            </TabItem>
-        </TabControl>
+        <TabControl Name="tbctrl" Loaded="TabControl_Loaded" Margin="-4,-6,0,0"/>
 
     </Grid>
 </UserControl>

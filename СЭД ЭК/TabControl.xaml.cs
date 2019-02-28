@@ -24,5 +24,24 @@ namespace СЭД_ЭК
         {
             InitializeComponent();
         }
+
+        private void TabControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            var startTab = new StartTab();
+
+            startTab.ToEmployees += EmployeeControl.Fill;
+            startTab.ToEmployees += EmployeeControl.Show;
+
+            var tabItem = new TabItem();
+            tabItem.Header = new TextBlock {Text = "Стартовая вкладка" };
+            tabItem.Content = startTab;
+            tbctrl.Items.Add(tabItem);
+        }
+
+        private void ToEmployees()
+        {
+
+        }
+
     }
 }

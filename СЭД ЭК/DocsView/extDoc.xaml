@@ -59,7 +59,7 @@
             VerticalAlignment="Top" Width="385.737"
             FontFamily="HelveticaNeueCyr" FontSize="40" FontWeight="Regular"
             Foreground="#0b9aec"/>
-        <Label x:Name="lblPlanDate_Copy" Content="" HorizontalAlignment="Left"
+        <Label x:Name="lblPlanDate" Content="" HorizontalAlignment="Left"
             Height="51.475" Margin="549.508,77.602,0,0" Grid.Row="1"
             VerticalAlignment="Top" Width="385.737"
             FontFamily="HelveticaNeueCyr" FontSize="40" FontWeight="Regular"

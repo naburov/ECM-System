@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace СЭД_ЭК
 {
     /// <summary>
-    /// Логика взаимодействия для StartTab.xaml
+    /// Логика взаимодействия для DocsTab.xaml
     /// </summary>
-    public partial class StartTab : UserControl
+    public partial class EmployeeTab : UserControl
     {
-        public StartTab()
+        public EmployeeTab()
         {
             InitializeComponent();
         }

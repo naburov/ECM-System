@@ -20,10 +20,11 @@ namespace СЭД_ЭК
     /// </summary>
     public partial class MainPage : Page
     {
-        public event ChangePage Chpage;
+        public event ChangePage ChPage;
         public MainPage()
         {
             InitializeComponent();
         }
+
     }
 }

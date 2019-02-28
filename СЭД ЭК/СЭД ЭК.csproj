@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -57,6 +60,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller.cs" />
+    <Compile Include="DocsControl.cs" />
+    <Compile Include="EmployeeControl.cs" />
+    <Compile Include="Entities\Document.cs" />
+    <Compile Include="Entities\Employee.cs" />
+    <Compile Include="EntityControl.cs" />
+    <Compile Include="Tabs\EmployeesTab.xaml.cs">
+      <DependentUpon>EmployeesTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\DocsTab.xaml.cs">
+      <DependentUpon>DocsTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -99,7 +114,7 @@
     <Compile Include="MyControls\txtbxCurve.xaml.cs">
       <DependentUpon>txtbxCurve.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StartTab.xaml.cs">
+    <Compile Include="Tabs\StartTab.xaml.cs">
       <DependentUpon>StartTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="TabControl.xaml.cs">
@@ -108,6 +123,14 @@
     <Compile Include="UserOrClientCard.xaml.cs">
       <DependentUpon>UserOrClientCard.xaml</DependentUpon>
     </Compile>
+    <Page Include="Tabs\EmployeesTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\DocsTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,7 +199,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StartTab.xaml">
+    <Page Include="Tabs\StartTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

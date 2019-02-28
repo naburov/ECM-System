@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 namespace СЭД_ЭК
 {
     public delegate bool ChangePage(object sender);
+    public delegate void ChangeTab(object sender, TabItem ctrl);
     /// <summary>
     /// Логика взаимодействия для StartPage.xaml
     /// </summary>
@@ -29,6 +30,14 @@ namespace СЭД_ЭК
 
         private void btnCurve_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            //Получение из формы логина и пароля
+            string pass = txtPassword.Text;
+            string login = txtLogin.Text;
+
+            DBUtils.username = login;
+            DBUtils.password = pass;
+
+            var connection = DBUtils.GetDBConnection();
             //подключение к базе
             ChPage?.Invoke(this);
         }

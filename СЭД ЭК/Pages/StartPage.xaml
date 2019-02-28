@@ -30,8 +30,8 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <local:txtbxCurve Grid.Row="0" StartText="Логин"/>
-            <local:txtbxCurve Grid.Row="1" StartText="Пароль"/>
+            <local:txtbxCurve x:Name="txtLogin" Grid.Row="0" StartText="Логин"/>
+            <local:txtbxCurve x:Name="txtPassword" Grid.Row="1" StartText="Пароль"/>
             <local:btnCurve Grid.Row="2" Text="Войти" MouseDown="btnCurve_MouseDown"/>
         </Grid>
     </Grid>
