@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="СЭД_ЭК.MyControls.Buttons.roundButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:СЭД_ЭК.MyControls.Buttons"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="50">
+    <Grid Background="#0B9AEC" Margin="0,0,-4.4,-2.4">
+        <Image HorizontalAlignment="Center" Mouse.MouseEnter="Ellipse_MouseEnter" Mouse.MouseLeave="Image_MouseLeave" Source="/СЭД ЭК;component/Resources/plus.png" Margin="3,0,3,4" RenderTransformOrigin="-0.807,0.998" Width="48" Height="46" VerticalAlignment="Bottom"/>
+        <Ellipse Name="el" Mouse.MouseEnter="Ellipse_MouseEnter"  Width="40" Panel.ZIndex="-1" Height="40" Fill="#FFFFFF" Stroke="White" Margin="6,5,6,6" IsStylusDirectlyOverChanged="El_IsStylusDirectlyOverChanged" IsMouseDirectlyOverChanged="El_IsMouseDirectlyOverChanged" MouseMove="El_MouseMove" StrokeThickness="0"/>
+        <Ellipse Width="40" Panel.ZIndex="-2" Height="40" Fill="#FFFFFF" Stroke="White" Margin="6,5,6,6" StrokeThickness="0"/>
+    </Grid>
+</UserControl>
+    

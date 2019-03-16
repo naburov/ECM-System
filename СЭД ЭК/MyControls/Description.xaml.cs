@@ -24,5 +24,26 @@ namespace СЭД_ЭК
         {
             InitializeComponent();
         }
+
+        public string description
+        {
+            get => new TextRange(rtxtDescription.Document.ContentStart,
+                                    rtxtDescription.Document.ContentEnd).Text;
+            set
+            {
+                rtxtDescription.Document.Blocks.Clear();
+                rtxtDescription.AppendText(value);
+            }
+        }
+
+        private void Description_OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            if (description == "Введите описание") description = "";
+        }
+
+        private void Description_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (description == "Введите описание") description = "";
+        }
     }
 }

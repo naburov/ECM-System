@@ -6,12 +6,18 @@
              xmlns:local="clr-namespace:СЭД_ЭК"
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="960">
-    <Grid>
+    <Grid Name="mainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="861*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="437*"/>
         </Grid.RowDefinitions>
-        <ScrollViewer Name="Viewer">
-            <DockPanel LastChildFill="True" Grid.Row="1" Name="EmpList"/>
+
+        <ScrollViewer Name="Viewer" Margin="0,126,0,10" Grid.RowSpan="2">
+            <DockPanel LastChildFill="False" Grid.Row="1" Name="EmpList"/>
         </ScrollViewer>
+        <local:btnCurveSmall x:Name="btnAdd" Mouse.PreviewMouseDown="BtnCurveSmall_MouseDown" Text="Добавить &#10;сотрудника" HorizontalAlignment="Left" Margin="10,16,0,10.4" Width="204"/>
+        <Label Name="btnExport" Content="Экспортировать в Excel" HorizontalAlignment="Left"
+               Foreground="#0b9aec" FontSize="18" Cursor="Hand" Mouse.MouseDown="Label_MouseDown"
+               Height="38.842" Margin="245.4,45.485,0,0" VerticalAlignment="Top" Width="244.8"/>
     </Grid>
 </UserControl>

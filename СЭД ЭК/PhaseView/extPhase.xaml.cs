@@ -24,5 +24,10 @@ namespace СЭД_ЭК
         {
             InitializeComponent();
         }
+
+        public string phaseName { get => lblDocName.Content.ToString(); set => lblDocName.Content = value; }
+        public string begDate { get => mcntrlDates.begin_Date; set => mcntrlDates.begin_Date = value; }
+        public string endDate { get => mcntrlDates.end_Date; set => mcntrlDates.end_Date = value; }
+        public string description { get => mcntrlDesc.description; set => mcntrlDesc.description = value; }
     }
 }

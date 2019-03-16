@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="СЭД_ЭК.EmployeeViewCreateOrder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:СЭД_ЭК"
+             mc:Ignorable="d" d:DesignWidth="600" Height="51.2">
+    <Grid Margin="0,0,0,2.2">
+        <Label Name="lblEmployeeName" Content="Label" HorizontalAlignment="Left" 
+               Margin="10,7,0,0" VerticalAlignment="Top" FontWeight="Medium"
+               Foreground="#0b9aec" FontFamily="HelveticaNeueCyr" FontSize="20" Width="275"/>
+        <ComboBox Name="cmbbxRoles"  IsEditable="True" HorizontalAlignment="Left" Margin="290,10,0,0" VerticalAlignment="Top" Width="282"/>
+
+    </Grid>
+</UserControl>

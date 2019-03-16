@@ -17,6 +17,16 @@ namespace СЭД_ЭК
 {
     public delegate bool ChangePage(object sender);
     public delegate void ChangeTab(object sender, TabItem ctrl);
+    public delegate void DocEvent(object sender, DocEventArgs e);
+
+    public class DocEventArgs
+    {
+        public string physicalAddress { get; set; }
+        public int Id { get; set; }
+        public DocEventArgs() { }
+    }
+
+
     /// <summary>
     /// Логика взаимодействия для StartPage.xaml
     /// </summary>
@@ -30,16 +40,48 @@ namespace СЭД_ЭК
 
         private void btnCurve_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //Получение из формы логина и пароля
-            string pass = txtPassword.Text;
-            string login = txtLogin.Text;
 
-            DBUtils.username = login;
-            DBUtils.password = pass;
+        }
 
-            var connection = DBUtils.GetDBConnection();
-            //подключение к базе
-            ChPage?.Invoke(this);
+        private void BtnGoNext_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                string pass = txtPassword.Text;
+                string login = txtLogin.Text;
+
+                DBUtils.username = login;
+                DBUtils.password = pass;
+
+                try
+                {
+                    var connection = DBUtils.GetDBConnection();
+                    connection.Open();
+                    ChPage?.Invoke(this);
+
+                    if (login == "root")
+                    {
+                        InterfaceControl.isDirectorsInterface = true;
+                        DocsControl.SetDirectorsQuery();
+                    }
+                }
+                catch (Exception)
+                {
+                    lblError.Content = "Неверный логин или пароль";
+                }
+
+                
+            }
+        }
+
+        private void BtnCurve_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void UIElement_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

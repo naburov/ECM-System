@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="СЭД_ЭК.PhaseView.CreatePhaseView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:СЭД_ЭК.PhaseView"
+             mc:Ignorable="d" d:DesignWidth="1440" Height="117.439">
+    <Grid Margin="10,10,-10,-10" Height="92" VerticalAlignment="Top">
+        <Label Name="lblPhaseName" Content="Label" FontFamily="HelveticaNeueCyr" FontSize="30"
+               Foreground="#0b9aec" FontWeight="Medium"
+               HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="437"/>
+        <Label x:Name="lblBeginDate" Content="Label" FontFamily="HelveticaNeueCyr" FontSize="20"
+            Foreground="#0b9aec" FontWeight="Light"
+            HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" Width="333.8"/>
+        <Label x:Name="lblEdit" Content="Редактировать" FontFamily="HelveticaNeueCyr" FontSize="15"
+            Foreground="#0b9aec" FontWeight="Light" MouseDown="LblEdit_OnMouseDown"
+            HorizontalAlignment="Left" Margin="784,10,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblDelete" Content="Удалить" FontFamily="HelveticaNeueCyr" FontSize="15"
+            Foreground="#0b9aec" FontWeight="Light" MouseDown="LblDelete_OnMouseDown"
+            HorizontalAlignment="Left" Margin="909,10,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="-" FontFamily="HelveticaNeueCyr" FontSize="20"
+            Foreground="#0b9aec" FontWeight="Light"
+            HorizontalAlignment="Left" Margin="343.8,53,0,0" VerticalAlignment="Top" Width="15"/>
+        <Label x:Name="lblEndDate" Content="Label" FontFamily="HelveticaNeueCyr" FontSize="20"
+            Foreground="#0b9aec" FontWeight="Light"
+            HorizontalAlignment="Left" Margin="407,53,0,0" VerticalAlignment="Top" Width="329.2"/>
+
+    </Grid>
+</UserControl>

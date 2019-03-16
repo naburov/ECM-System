@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:СЭД_ЭК"
       mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="1920"
+      d:DesignHeight="1080" d:DesignWidth="1800"
       Title="StartPage">
     <Grid Name="Main_Grid">
         <Grid.RowDefinitions>
@@ -13,26 +13,27 @@
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Content="CЭД ЭК"
+        <Label Content="CЭД ЭК" Grid.Row="0"
                FontFamily="HelveticeNeueCyr"
                FontStretch="Medium"
                FontSize="150"
                Foreground="#0B9AEC"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Bottom"
-               Height="153" Width="514" Grid.Row="0"></Label>
+               HorizontalAlignment="Left" Width="1127.5"  Margin="506.5,0,0,14" Height="183" VerticalAlignment="Bottom" Grid.RowSpan="2"/>
 
         <Grid HorizontalAlignment="Center" 
             Height="394" 
             VerticalAlignment="Top" Width="475" Grid.Row="2">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="99*"/>
+                <RowDefinition Height="99*"/>
+                <RowDefinition Height="133*"/>
+                <RowDefinition Height="64*"/>
             </Grid.RowDefinitions>
-            <local:txtbxCurve x:Name="txtLogin" Grid.Row="0" StartText="Логин"/>
-            <local:txtbxCurve x:Name="txtPassword" Grid.Row="1" StartText="Пароль"/>
-            <local:btnCurve Grid.Row="2" Text="Войти" MouseDown="btnCurve_MouseDown"/>
+            <local:txtbxCurve x:Name="txtLogin" Grid.Row="0" StartText="Логин" Margin="0,11.775,0,11.974"/>
+            <local:txtbxCurve x:Name="txtPassword" StartText="Пароль" Margin="0,11.575,0,10" Grid.Row="1"/>
+            <local:btnCurve x:Name="btnGoNext" Mouse.PreviewMouseDown="BtnGoNext_MouseDown" Margin="104.5,23.825,120.5,19.438" Grid.Row="2"/>
+            <Label x:Name="lblError"  Foreground="#0b9aec" FontFamily="HelveticaNeueCyr" FontSize="20" Margin="93.5,10,21,10" Grid.Row="3"/>
         </Grid>
+
     </Grid>
 </Page>

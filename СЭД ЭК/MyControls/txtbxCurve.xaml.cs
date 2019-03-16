@@ -23,11 +23,17 @@ namespace СЭД_ЭК
         public txtbxCurve()
         {
             InitializeComponent();
+            Text = StartText;
         }
         /// <summary>
         /// Отображаемый по умолчанию текст
         /// </summary>
         public string StartText { get; set; }
+        public new double FontSize { get => txtbx.FontSize; set => txtbx.FontSize = value; }
+
+
+        private string text;
+        public double CornerRadius { get => brd.CornerRadius.BottomLeft; set { brd.CornerRadius = new System.Windows.CornerRadius(value); } }
 
         /// <summary>
         /// Отображаемый текст
@@ -35,7 +41,11 @@ namespace СЭД_ЭК
         public string Text
         {
             get => txtbx.Text;
-            set => txtbx.Text = value;
+            set
+            {
+                text =value;
+                txtbx.Text = text;
+            }
         }
         #region
         private void txtbx_MouseDown(object sender, MouseButtonEventArgs e)
@@ -56,7 +66,8 @@ namespace СЭД_ЭК
 
         private void txtbx_Loaded(object sender, RoutedEventArgs e)
         {
-            Text = StartText;
+            if (Text != "") txtbx.Text = Text;
+            else txtbx.Text = StartText;
         }
 
         private void txtbx_LostFocus(object sender, RoutedEventArgs e)
@@ -64,5 +75,10 @@ namespace СЭД_ЭК
             if (txtbx.Text == string.Empty) Text = StartText;
         }
         #endregion
+
+        private void TxtbxCurve_OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtbx.Text == StartText) Text = "";
+        }
     }
 }

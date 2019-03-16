@@ -4,72 +4,71 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:СЭД_ЭК"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             mc:Ignorable="d" d:DesignWidth="800" Height="181.717">
+    <Grid Height="169" VerticalAlignment="Top">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="53*"/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="25"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="12*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.ColumnSpan="2"   x:Name="lblDocName" Content="Название" 
-            HorizontalAlignment="Center" VerticalAlignment="Center"
-            Height="71.311"
-            Width="500.01"
+        <Label Grid.Row="0"   x:Name="lblProjectName" Content="Название" 
+            HorizontalAlignment="Left"
+            Width="213"
             FontFamily="HelveticaNeueCyr"
-            FontSize="60"
+            FontSize="25"
             FontWeight="Bold"
-            Foreground="#0b9aec" Margin="185.195,10,114.795,8.689"/>
+            Foreground="#0b9aec" Margin="0.2,0,0,2.4" Grid.Column="1"/>
         <Label Grid.Column="1" Content="Текущий этап:" HorizontalAlignment="Left" 
-            Height="49.732" Grid.Row="1" 
-            VerticalAlignment="Center" Width="269.8"
+            Height="34" 
+            VerticalAlignment="Center" Width="163"
             FontFamily="HelveticaNeueCyr"
-            FontSize="40"
+            FontSize="15"
             FontWeight="Light"
-            Foreground="#0b9aec" Margin="0,20.134"/>
+            Foreground="#0b9aec" Margin="5.2,0.6,0,3" Grid.Row="1"/>
         <Label  Grid.Column="1" Name="lblPhaseName" HorizontalAlignment="Left" 
-            Height="49.732" Grid.Row="1" 
-            VerticalAlignment="Center" Width="515.2"
+            Height="34" 
+            VerticalAlignment="Center" Width="314"
             FontFamily="HelveticaNeueCyr"
-            FontSize="40"
+            FontSize="15"
             FontWeight="Light"
-            Foreground="#0b9aec" Margin="274.8,20.134,0,20.134"/>
+            Foreground="#0b9aec" Margin="214.2,3.6,0,0" Grid.Row="1" Grid.ColumnSpan="2"/>
         <Label Grid.Column="1" Content="Срок окончания этапа:" HorizontalAlignment="Left" 
-            Height="49.732" Grid.Row="2" 
-            VerticalAlignment="Center" Width="423.4"
+            Height="31" Grid.Row="2" 
+            VerticalAlignment="Center" Width="168"
             FontFamily="HelveticaNeueCyr"
-            FontSize="40"
+            FontSize="15"
             FontWeight="Light"
-            Foreground="#0b9aec" Margin="0,20.134"/>
+            Foreground="#0b9aec" Margin="0.2,2,0,4.6"/>
         <Label Grid.Column="1" x:Name="lblEndPhaseDate" HorizontalAlignment="Left" 
-            Height="49.732" Grid.Row="2" 
-            VerticalAlignment="Center" Width="361.6"
+            Height="26" Grid.Row="2" 
+            VerticalAlignment="Center" Width="314"
             FontFamily="HelveticaNeueCyr"
-            FontSize="40"
+            FontSize="15"
             FontWeight="Light"
-            Foreground="#0b9aec" Margin="428.4,20.134,0,20.134"/>
+            Foreground="#0b9aec" Margin="214.2,5,0,6.6" Grid.ColumnSpan="2"/>
         <Label Grid.Column="1" Content="Срок окончания проекта:" HorizontalAlignment="Left" 
-            Height="49.732" Grid.Row="3" 
-            VerticalAlignment="Center" Width="476.2"
+            Height="35" Grid.Row="3" 
+            VerticalAlignment="Center" Width="191"
             FontFamily="HelveticaNeueCyr"
-            FontSize="40"
+            FontSize="15"
             FontWeight="Light"
-            Foreground="#0b9aec" Margin="0,20.134" />
+            Foreground="#0b9aec" Margin="0.2,5.4,0,11.6" />
         <Label Grid.Column="1" x:Name="lblEndProjectDate" HorizontalAlignment="Left" 
-            Height="49.732" Grid.Row="3" 
-            VerticalAlignment="Center" Width="308.8"
+            Height="31" Grid.Row="3" 
+            VerticalAlignment="Center" Width="314"
             FontFamily="HelveticaNeueCyr"
-            FontSize="40"
+            FontSize="15"
             FontWeight="Light"
-            Foreground="#0b9aec" Margin="481.2,20.134,0,20.134" />
+            Foreground="#0b9aec" Margin="214.2,7.4,0,13.6" Grid.ColumnSpan="2" />
         <local:btnCurveSmall 
-            Grid.Column="1" Grid.Row="4"
-            Text="Подробнее" HorizontalAlignment="Left"/>
+            Grid.Column="2"
+            Text="Подробнее" Mouse.PreviewMouseDown="BtnCurveSmall_MouseDown" HorizontalAlignment="Left" Margin="10,38,0,44.6" Width="161" Grid.RowSpan="4"/>
     </Grid>
 </UserControl>

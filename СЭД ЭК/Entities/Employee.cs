@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace СЭД_ЭК.Entities
 {
-    class Employee
+    public class Employee
     {
         public int id { get; set; }
         public string Name { get; set; }
@@ -22,14 +22,23 @@ namespace СЭД_ЭК.Entities
             Phone = phone;
             Email = email;
 
-            empView = new UserOrClientCard
-            {
-                empOrClientName = Name,
-                email = Email,
-                phone = Phone,
-            };
+            //empView = new UserOrClientCard
+            //{
+            //    Id = id,
+            //    empOrClientName = Name,
+            //    email = Email,
+            //    phone = Phone,
+            //};
+
+            //empView.ToDocs += DocsControl.GetDocsByEmployee;
+            //empView.ToDocs += DocsControl.FillDataTable;
+            //empView.ToDocs += InterfaceControl.ShowDocs;
         }
 
-
+        public override bool Equals(object obj)
+        {
+            var o = obj as Employee;
+            return (o.Name==Name && o.Email==Email && o.Phone==Phone);
+        }
     }
 }

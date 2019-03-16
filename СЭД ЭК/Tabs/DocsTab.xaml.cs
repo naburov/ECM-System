@@ -20,9 +20,28 @@ namespace СЭД_ЭК
     /// </summary>
     public partial class DocsTab : UserControl
     {
+        public EventHandler exportToExcel;
+        public TabEvents CreateNewOrder;
         public DocsTab()
         {
             InitializeComponent();
+            if(!InterfaceControl.isDirectorsInterface)
+                mainGrid.Children.Remove(btnAdd);
+            exportToExcel += InterfaceControl.OnDocExport;
+        }
+
+        private void RoundButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            CreateNewOrder?.Invoke(sender, new TabEventArgs()
+            {
+                item = this.Parent as TabItem,
+                TabControl = (this.Parent as TabItem).Parent as TabControl,
+            });
+        }
+
+        private void BtnExport_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            exportToExcel?.Invoke(this, new EventArgs());
         }
     }
 }

@@ -20,6 +20,7 @@ namespace СЭД_ЭК
     /// </summary>
     public partial class btnCurve : UserControl
     {
+
         public btnCurve()
         {
             InitializeComponent();
@@ -30,5 +31,10 @@ namespace СЭД_ЭК
         {
             lbl.Content = Text;
         }
+
+        private void Lbl_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+        }
+
     }
 }

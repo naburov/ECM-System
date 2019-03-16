@@ -1,0 +1,49 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:СЭД_ЭК.DocsView"
+             xmlns:СЭД_ЭК="clr-namespace:СЭД_ЭК" x:Class="СЭД_ЭК.DocsView.createPhaseDocView"
+             mc:Ignorable="d" Width="389.512" Height="127.988">
+
+    <Grid Margin="0,0,-0.4,0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="214*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblDocName" Content="Название" 
+                HorizontalAlignment="Left" 
+                Height="41" Margin="10,10,0,0"
+                VerticalAlignment="Top" Width="370"
+                FontFamily="HelveticaNeueCyr"
+                FontSize="25"
+                FontWeight="Bold"
+                Foreground="#0b9aec"/>
+        <Label Name="lblEditDoc" MouseDown="LblEditDoc_OnMouseDown"  Content="Редактировать" 
+                HorizontalAlignment="Left" 
+                Height="30" Margin="10,86,0,0"
+                VerticalAlignment="Top" Width="123" Cursor="Hand"
+                FontFamily="HelveticaNeueCyr"
+                FontSize="15"
+                FontWeight="Light"
+                Foreground="#0b9aec"/>
+        <Label x:Name="lblEmployeeName" Content="" 
+                Height="30" Margin="10,51,165.4,0"
+                VerticalAlignment="Top"
+                FontFamily="HelveticaNeueCyr"
+                FontSize="15"
+                FontWeight="Light"
+                Foreground="#0b9aec"/>
+        <Label Name="lblDeleteDoc" MouseDown="LblDeleteDoc_OnMouseDown" Content="Удалить" 
+            HorizontalAlignment="Left" Cursor="Hand"
+            Height="30" Margin="228,86,0,0"
+            VerticalAlignment="Top" Width="103"
+            FontFamily="HelveticaNeueCyr"
+            FontSize="15"
+            FontWeight="Light"
+            Foreground="#0b9aec"/>
+    </Grid>
+</UserControl>

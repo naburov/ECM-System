@@ -1,0 +1,48 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:СЭД_ЭК.Tabs"
+             xmlns:СЭД_ЭК="clr-namespace:СЭД_ЭК" x:Class="СЭД_ЭК.Tabs.AddNewClientTab"
+             mc:Ignorable="d" Width="600" Height="674.4">
+    <Grid Name="gridMain" Margin="0,0,0,8.4" Loaded="GridMain_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="453*"/>
+            <ColumnDefinition Width="67*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" x:Name="lblHeader" Content="Введите информацию &#xA;о новом заказчике  " VerticalAlignment="Top"
+            Height="71"
+            FontFamily="HelveticaNeueCyr"
+            FontSize="25"
+            FontWeight="Bold"
+            Foreground="#0b9aec" Margin="10,16,11.8,0" Grid.Column="1"/>
+
+        <СЭД_ЭК:txtbxCurve x:Name="txtbxName" FontSize="20" StartText="Название организации" Grid.Column="1" HorizontalAlignment="Left" Margin="3,9.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="446" Height="91"/>
+        <СЭД_ЭК:txtbxCurve x:Name="txtbxPhone" FontSize="20" StartText="Телефон" Grid.Column="1" HorizontalAlignment="Left" Margin="3,9.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="446" Height="91"/>
+        <СЭД_ЭК:txtbxCurve x:Name="txtbxEmail" FontSize="20" StartText="e-mail" Grid.Column="1" HorizontalAlignment="Left" Margin="7,6.2,0,0" Grid.Row="3" VerticalAlignment="Top" Width="442" Height="91"/>
+        <СЭД_ЭК:btnCurveSmall x:Name="btnAdd" Text="Создать" PreviewMouseDown="BtnCurveSmall_GotFocus" Grid.Column="1" HorizontalAlignment="Left" Margin="144,16,0,0" Grid.Row="4" VerticalAlignment="Top" Height="62" Width="140"/>
+        <Label x:Name="lblCancel" Mouse.MouseDown="LblCancel_MouseDown" GotFocus="LblCancel_GotFocus" Content="Отменить" 
+            Grid.Column="1" Margin="170,23.6,197.8,57.6"
+            FontFamily="HelveticaNeueCyr"
+            FontSize="15"
+            FontWeight="Light"            
+            Foreground="#0b9aec" Grid.Row="5" RenderTransformOrigin="0.5,0.5"/>
+
+        <Label x:Name="lblSuccess" Panel.ZIndex="-1" GotFocus="LblCancel_GotFocus" Content="Успешно" 
+            Grid.Column="1" Margin="170,36,197.8,44.4"
+            FontFamily="HelveticaNeueCyr"
+            FontSize="15"
+            FontWeight="Light"            
+            Foreground="#0b9aec" Grid.Row="4" RenderTransformOrigin="0.5,0.5"/>
+    </Grid>
+</UserControl>

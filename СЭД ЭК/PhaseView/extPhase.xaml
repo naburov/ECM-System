@@ -4,39 +4,32 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:СЭД_ЭК"
-             mc:Ignorable="d" 
-             d:DesignHeight="600
-             " d:DesignWidth="960">
+             mc:Ignorable="d" d:DesignWidth="960" Height="454.209">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="95*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="98*"/>
-            <RowDefinition Height="93*"/>
-            <RowDefinition Height="204*"/>
-            <RowDefinition Height="205*"/>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="105*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" x:Name="lblDocName" 
-            HorizontalAlignment="Center" VerticalAlignment="Center"
-            Height="71.312"  Width="450"
+        <Label Grid.Row="0" x:Name="lblDocName" Content="Название"
+            HorizontalAlignment="Left" VerticalAlignment="Top"
+            Height="71"  Width="450"
             FontFamily="HelveticaNeueCyr"
-            FontSize="60"
+            FontSize="25"
             FontWeight="Bold"
-            Foreground="#0b9aec" Margin="255,13.344">
-            <Label x:Name="lblDocName_Copy" Content="Название" 
-                HorizontalAlignment="Center" VerticalAlignment="Center"
-                Height="71.312"  Width="450"
-                FontFamily="HelveticaNeueCyr"
-                FontSize="60"
-                FontWeight="Bold"
-                Foreground="#0b9aec"/>
-        </Label>
-        <local:dateBeg_End x:Name="mcntrlDates" Grid.Row="1"/>
-        <local:Description x:Name="mcntrlDesc" Grid.Row="2" Margin="0,0,0,0.885"/>
-        <ScrollViewer Grid.Row="3">
-            <DockPanel>
+            Foreground="#0b9aec" Margin="10,10,0,0" Grid.RowSpan="2"/>
+        <local:dateBeg_End x:Name="mcntrlDates" FontSize="15" Margin="10,0,265,11.6" Grid.Row="1" Height="34" VerticalAlignment="Bottom"/>
+        <local:Description x:Name="mcntrlDesc" FontSize="15" Grid.Row="2" Margin="0,5.4,0,10"/>
+        <ScrollViewer Grid.Row="3" Margin="0,11,0,0.4">
+            <DockPanel LastChildFill="False" Name="docsList" >
                 <Label Content="Список докуметов" HorizontalAlignment="Center"
                 Height="51.475"
-                VerticalAlignment="Top" Width="393.114"
-                FontFamily="HelveticaNeueCyr" FontSize="40" FontWeight="Bold"
+                VerticalAlignment="Top" Width="393.114" DockPanel.Dock="Top"
+                FontFamily="HelveticaNeueCyr" FontSize="25" FontWeight="Bold"
                 Foreground="#0b9aec"/>
             </DockPanel>
         </ScrollViewer>

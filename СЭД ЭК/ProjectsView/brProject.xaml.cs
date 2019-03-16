@@ -20,9 +20,38 @@ namespace СЭД_ЭК
     /// </summary>
     public partial class brProject : UserControl
     {
+        public TabEvents ToExtProj;
+
+        public TabControl tbControl { get; set; }
+        public TabItem item { get; set; }
+
+
+        public int Id { get; set; }
+        public string projName { get => lblProjectName.Content.ToString(); set => lblProjectName.Content = value; }
+        public string activePhase { get => lblPhaseName.Content.ToString(); set => lblPhaseName.Content = value; }
+        public string phaseEnd { get => lblEndPhaseDate.Content.ToString(); set => lblEndPhaseDate.Content = value; }
+        public string projectEnd { get => lblEndProjectDate.Content.ToString(); set => lblEndProjectDate.Content = value; }
         public brProject()
         {
             InitializeComponent();
+        }
+
+        private void BtnCurveSmall_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //ToExtProj?.Invoke(sender, new TabEventArgs()
+            //{
+            //    item = ((((this.Parent as DockPanel).Parent as ScrollViewer).Parent as Grid).Parent as DocsTab).Parent as TabItem,
+            //    TabControl = (((((this.Parent as DockPanel).Parent as ScrollViewer).Parent as Grid).Parent as DocsTab).Parent as TabItem).Parent as TabControl,
+            //    projectId = Id,
+            //});
+
+            ToExtProj?.Invoke(sender, new TabEventArgs()
+            {
+                item = item,
+                TabControl = tbControl,
+                projectId = Id,
+            });
+
         }
     }
 }

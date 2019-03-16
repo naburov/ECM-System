@@ -35,12 +35,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Word, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,11 +74,53 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller.cs" />
+    <Compile Include="DocsView\createPhaseDocView.xaml.cs">
+      <DependentUpon>createPhaseDocView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeViewCreateOrder.xaml.cs">
+      <DependentUpon>EmployeeViewCreateOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Phase.cs" />
+    <Compile Include="FiltersControls\ProjectFilters.xaml.cs">
+      <DependentUpon>ProjectFilters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FiltersControls\DocFilters.xaml.cs">
+      <DependentUpon>DocFilters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\Buttons\roundButton.xaml.cs">
+      <DependentUpon>roundButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddPhasePage.xaml.cs">
+      <DependentUpon>AddPhasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PhasesList.xaml.cs">
+      <DependentUpon>PhasesList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhaseControl.cs" />
     <Compile Include="DocsControl.cs" />
+    <Compile Include="ClientControl.cs" />
     <Compile Include="EmployeeControl.cs" />
+    <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Document.cs" />
     <Compile Include="Entities\Employee.cs" />
-    <Compile Include="EntityControl.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="InterfaceControl.cs" />
+    <Compile Include="MyControls\Buttons\btnTabControl.xaml.cs">
+      <DependentUpon>btnTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CreateOrder.xaml.cs">
+      <DependentUpon>CreateOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhaseView\CreatePhaseView.xaml.cs">
+      <DependentUpon>CreatePhaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsControl.cs" />
+    <Compile Include="Tabs\AddNewClientTab.xaml.cs">
+      <DependentUpon>AddNewClientTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\ProjectTab.xaml.cs">
+      <DependentUpon>ProjectTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\EmployeesTab.xaml.cs">
       <DependentUpon>EmployeesTab.xaml</DependentUpon>
     </Compile>
@@ -120,9 +175,64 @@
     <Compile Include="TabControl.xaml.cs">
       <DependentUpon>TabControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\AddNewEmployeeTab.xaml.cs">
+      <DependentUpon>AddNewEmployeeTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserOrClientCard.xaml.cs">
       <DependentUpon>UserOrClientCard.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DocsView\createPhaseDocView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmployeeViewCreateOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FiltersControls\ProjectFilters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FiltersControls\DocFilters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyControls\Buttons\btnTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyControls\Buttons\roundButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddPhasePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PhasesList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\CreateOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhaseView\CreatePhaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\AddNewClientTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\ProjectTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Tabs\EmployeesTab.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -207,6 +317,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tabs\AddNewEmployeeTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserOrClientCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -230,6 +344,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -237,6 +352,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back.png" />
+    <Resource Include="Resources\calendar.png" />
+    <Resource Include="Resources\menu.png" />
+    <Resource Include="Resources\plus-white.png" />
+    <Resource Include="Resources\plus.png" />
+    <Resource Include="Resources\right-arrow.png" />
+    <Resource Include="Resources\search-white.png" />
+    <Resource Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\error.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

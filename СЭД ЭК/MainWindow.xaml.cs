@@ -42,12 +42,17 @@ namespace СЭД_ЭК
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            InterfaceControl.window = this;
+         
+
             stP = new StartPage();
             scP = new LoadScreen();
             mainP = new MainPage();
             Content = stP;
             stP.ChPage += OnFirstToSecondChange;
             scP.ChPage += OnSecondToMainChange;
+
+            InterfaceControl.mainP = mainP;
         }
     }
 }

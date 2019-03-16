@@ -4,19 +4,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:СЭД_ЭК"
+             xmlns:buttons="clr-namespace:СЭД_ЭК.MyControls.Buttons"
              mc:Ignorable="d" 
              d:DesignHeight="900" d:DesignWidth="600">
     <UserControl.Resources>
         <Style TargetType="{x:Type TabItem}">
             <Setter Property="FontFamily" Value="HelveticaNeueCyr"></Setter>
-            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
             <Setter Property="FontWeight" Value="Medium"/>
             <Setter Property="Foreground" Value="#0b9aec"/>
+            
         </Style>
 
     </UserControl.Resources>
     <Grid>
-        <TabControl Name="tbctrl" Loaded="TabControl_Loaded" Margin="-4,-6,0,0"/>
+        <TabControl Name="tbctrl" SelectionChanged="Tbctrl_SelectionChanged"
+                    Loaded="TabControl_Loaded" Margin="0,0,0,0">
+            <TabItem IsEnabledChanged="TabItem_IsEnabledChanged" Margin="0,-4,0,0" Padding="0">
+                <TabItem.Background>White</TabItem.Background>
+                <TabItem.Header>
+                    <buttons:roundButton x:Name="btn" Height="50" Width="50" BorderBrush="#FF0B9AEC"/>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+
 
     </Grid>
 </UserControl>

@@ -4,64 +4,60 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:СЭД_ЭК"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" Width="707.2" Height="139.2">
 
-    <Grid>
+    <Grid Margin="0,0,-149.8,-0.4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="396*"/>
+            <ColumnDefinition Width="461*"/>
+        </Grid.ColumnDefinitions>
         <Label Name="lblDocName" Content="Название" 
             HorizontalAlignment="Left" 
-               Height="71.311" Margin="10,10,0,0"
-               VerticalAlignment="Top" Width="650.41"
+               Height="41" Margin="10,10,0,0"
+               VerticalAlignment="Top" Width="373"
                FontFamily="HelveticaNeueCyr"
-               FontSize="60"
+               FontSize="25"
                FontWeight="Bold"
                Foreground="#0b9aec"/>
         <Label Content="Экспертиза предприятия:" 
             HorizontalAlignment="Left" 
-               Height="50.409" Margin="10,86.311,0,0"
-               VerticalAlignment="Top" Width="477.049"
+               Height="30" Margin="10,51,0,0"
+               VerticalAlignment="Top" Width="190"
                FontFamily="HelveticaNeueCyr"
-               FontSize="40"
+               FontSize="15"
                FontWeight="Light"
                Foreground="#0b9aec"/>
         <Label Content="Исполнитель:" 
             HorizontalAlignment="Left" 
-               Height="56.557" Margin="10,212.95,0,0"
-               VerticalAlignment="Top" Width="251.311"
+               Height="30" Margin="10,97,0,0"
+               VerticalAlignment="Top" Width="254"
                FontFamily="HelveticaNeueCyr"
-               FontSize="40"
+               FontSize="15"
                FontWeight="Light"
                Foreground="#0b9aec"/>
         <Label Name="EmployeeName" Content="" 
-            Height="56.557" Margin="269.385,214.876,10,0"
+            Height="30" Margin="205,97,12,0"
             VerticalAlignment="Top"
             FontFamily="HelveticaNeueCyr"
-            FontSize="40"
+            FontSize="15"
             FontWeight="Light"
             Foreground="#0b9aec"/>
         <Label Name="ProjectName" Content="" 
             HorizontalAlignment="Left" 
-            Height="73.156" Margin="10,136.72,0,0"
-            VerticalAlignment="Top" Width="780"
+            Height="30" Margin="205,51,0,0"
+            VerticalAlignment="Top" Width="168"
             FontFamily="HelveticaNeueCyr"
-            FontSize="40"
+            FontSize="15"
             FontWeight="Light"
             Foreground="#0b9aec"/>
-        <Grid 
-            HorizontalAlignment="Left" Height="173.567" 
-            Margin="0,276.433,0,0" VerticalAlignment="Top" Width="800">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="81*"/>
-                <ColumnDefinition Width="79*"/>
-            </Grid.ColumnDefinitions>
-            <local:btnCurveSmall x:Name="btnOpenDoc" GotFocus="btnOpenDoc_GotFocus_1" Grid.Column="0" Text="Открыть" FontSize="30" Margin="75.924,33.756,87.013,47.421" Height="Auto" Width="Auto"/>
-            <Label Name="lblShowMore" GotFocus="lblShowMore_GotFocus" Content="Подробнее" 
-                   Grid.Column="1" Margin="58.605,63.726,128.811,67.897"
+        <local:btnCurveSmall x:Name="btnOpenDoc" 
+                                 PreviewMouseDown="btnOpenDoc_GotFocus_1" Text="Открыть" FontSize="30" 
+                                 Margin="10,0,252.8,64.6" Height="56" Width="Auto" Loaded="btnOpenDoc_Loaded" Grid.Column="1" VerticalAlignment="Bottom"/>
+        <Label x:Name="lblShowMore" Cursor="Hand" PreviewMouseDown="LblShowMore_MouseDown" GotFocus="lblShowMore_GotFocus" Content="Подробнее" Margin="10,95,0,10"
             FontFamily="HelveticaNeueCyr"
-            FontSize="25"
+            FontSize="15"
             FontWeight="Light"            
-            Foreground="#0b9aec"/>
-        </Grid>
+            Foreground="#0b9aec" Grid.Column="1" HorizontalAlignment="Left" Width="166"/>
 
 
     </Grid>

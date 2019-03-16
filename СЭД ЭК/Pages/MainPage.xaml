@@ -1,13 +1,13 @@
-﻿<Page x:Class="СЭД_ЭК.MainPage"
+﻿    <Page x:Class="СЭД_ЭК.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:СЭД_ЭК"
+      xmlns:buttons="clr-namespace:СЭД_ЭК.MyControls.Buttons"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="MainPage">
-
     <Grid Background="#0b9aec">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -17,7 +17,30 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <local:MyTabControl Grid.Column="0" Grid.Row="1"/>
-        <local:MyTabControl Grid.Column="1" Grid.Row="1"></local:MyTabControl>
+        <TabControl Grid.Row="1" x:Name="tbctrl_left" 
+                    GotFocus="Tbctrl_left_GotFocus"
+                    Loaded="Tbctrl_left_Loaded"
+                    BorderThickness="1" BorderBrush="#FF0B9AEC">
+
+            <TabItem BorderBrush="#FF0B8AEC" Background="#FF0B9AEC" OpacityMask="#FF0B9AEC" Foreground="#FF0B9AEC" Margin="0,2,0,0" Padding="0,0,0,2">
+                <TabItem.Header>
+                    <buttons:roundButton x:Name="btn" Height="50" Width="50" BorderBrush="#FF0B9AEC"/>
+                </TabItem.Header>
+
+            </TabItem>
+        </TabControl>
+
+        <TabControl Name="tbctrl_right"  Grid.Row="1" Grid.Column="1" 
+                    Loaded="Tbctrl_right_Loaded"
+                    GotFocus="Tbctrl_right_GotFocus" BorderThickness="1" BorderBrush="#FF0B9AEC"
+                    >
+            <TabItem BorderBrush="#FF0B8AEC" Background="#FF0B9AEC" OpacityMask="#FF0B9AEC" Foreground="#FF0B9AEC" Margin="0,2,0,0" Padding="0,0,0,2">
+                <TabItem.Header>
+                    <buttons:roundButton x:Name="btn_right" Height="50" Width="50" BorderBrush="#FF0B9AEC"/>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+        <!--<local:MyTabControl Grid.Column="0" Grid.Row="1"/>
+        <local:MyTabControl Grid.Column="1" Grid.Row="1"></local:MyTabControl>-->
     </Grid>
 </Page>

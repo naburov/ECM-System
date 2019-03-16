@@ -20,9 +20,37 @@ namespace СЭД_ЭК
     /// </summary>
     public partial class EmployeeTab : UserControl
     {
+        public EventHandler exportToExcel;
+
+        public TabEvents AddNewClientOrEmployee;
+        public enum EmployeeClientType { emp, client}
+
+        public EmployeeClientType type { get; set; }
+
         public EmployeeTab()
         {
             InitializeComponent();
+            if(!InterfaceControl.isDirectorsInterface)
+                mainGrid.Children.Remove(btnAdd);
+            if (type == EmployeeClientType.client)
+                exportToExcel += InterfaceControl.OnClientExport;
+            else exportToExcel += InterfaceControl.OnEmployeeExport;
         }
+
+        private void BtnCurveSmall_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AddNewClientOrEmployee?.Invoke(sender, new TabEventArgs()
+            {
+                item = Parent as TabItem,
+                TabControl = (Parent as TabItem).Parent as TabControl,
+            });
+
+        }
+
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            exportToExcel?.Invoke(this, new EventArgs ());
+        }
+
     }
 }

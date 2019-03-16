@@ -5,35 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+
 
 namespace СЭД_ЭК
 {
-    public class Controller
-    {
-        static DataTable employees;
-        static DataTable clients;
-
-        public void GetEmployees()
-        {
-            var connection = DBUtils.GetDBConnection();
-            connection.Open();
-
-            //нужен метод для построения команды
-            var comand = "SELECT * FROM e_flow_documentation.employee";
-
-            MySqlCommand query = new MySqlCommand(comand, connection);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query);
-            adapter.Fill(employees); 
-        }
-
-        public void ShowEmpoyees()
-        {
-            
-        }
-    }
-
-
-
     class DBUtils
     {
         public static string username { get; set; }
@@ -57,6 +34,49 @@ namespace СЭД_ЭК
 
             MySqlConnection conn = new MySqlConnection(connString);
             return conn;
+        }
+    }
+
+    class ExportToExcel
+    {
+        static public void Export(string address, System.Data.DataTable dt)
+        {
+            var excel_app = new Application();
+
+            excel_app.Visible = false;
+            var workbook = excel_app.Workbooks.Add(Type.Missing);
+            var worksheet = (Worksheet)excel_app.ActiveSheet;
+
+            char colIndex = 'A';
+            int rowIndex = 1;
+
+            foreach (DataColumn col in dt.Columns)
+            {
+                colIndex++;
+                worksheet.Cells[rowIndex, colIndex.ToString()] = col.ColumnName.ToString();
+                ((Range) worksheet.Columns[colIndex]).AutoFit();
+            }
+            
+            foreach (DataRow row in dt.Rows)
+            {
+                colIndex = 'A';
+                rowIndex++;
+                foreach (object o in row.ItemArray)
+                {
+                    worksheet.Cells[rowIndex, colIndex.ToString()] = o;
+                    colIndex++;
+                }
+            }
+
+            for (colIndex = 'A'; colIndex < dt.Rows[0].ItemArray.Length; colIndex++)
+            {
+                ((Range) worksheet.Columns[colIndex]).AutoFit();
+            }
+
+            workbook.SaveAs(address);
+            workbook.Close();
+            excel_app.Quit();
+            GC.Collect();
         }
     }
 }

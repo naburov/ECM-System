@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace СЭД_ЭК
 {
     /// <summary>
@@ -20,6 +21,7 @@ namespace СЭД_ЭК
     /// </summary>
     public partial class MyTabControl : UserControl
     {
+        bool isInitialized;
         public MyTabControl()
         {
             InitializeComponent();
@@ -27,15 +29,14 @@ namespace СЭД_ЭК
 
         private void TabControl_Loaded(object sender, RoutedEventArgs e)
         {
-            var startTab = new StartTab();
+            CreateStartTab();
+            tbctrl.SelectedIndex = 1;
+            isInitialized = true;
+        }
 
-            startTab.ToEmployees += EmployeeControl.Fill;
-            startTab.ToEmployees += EmployeeControl.Show;
+        private void CreateStartTab()
+        {
 
-            var tabItem = new TabItem();
-            tabItem.Header = new TextBlock {Text = "Стартовая вкладка" };
-            tabItem.Content = startTab;
-            tbctrl.Items.Add(tabItem);
         }
 
         private void ToEmployees()
@@ -43,5 +44,18 @@ namespace СЭД_ЭК
 
         }
 
+        private void TabItem_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            CreateStartTab();
+        }
+
+        private void Tbctrl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (tbctrl.SelectedIndex == 0 && isInitialized)
+            {
+                CreateStartTab();
+                tbctrl.SelectedIndex = tbctrl.Items.Count - 1;
+            }
+        }
     }
 }

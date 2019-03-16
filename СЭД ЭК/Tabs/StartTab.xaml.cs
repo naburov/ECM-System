@@ -20,10 +20,10 @@ namespace СЭД_ЭК
     /// </summary>
     public partial class StartTab : UserControl
     {
-        public event ChangeTab ToEmployees;
-        public event ChangeTab ToProjects;
-        public event ChangeTab ToDocuments;
-        public event ChangeTab ToClients;
+        public event TabEvents ToEmployees;
+        public event TabEvents ToProjects;
+        public event TabEvents ToDocuments;
+        public event TabEvents ToClients;
         public StartTab()
         {
             InitializeComponent();
@@ -31,43 +31,79 @@ namespace СЭД_ЭК
 
         private void lblToEmployees_GotFocus(object sender, RoutedEventArgs e)
         {
-            ToEmployees?.Invoke(this, this.Parent as TabItem);
+            ToEmployees?.Invoke(this, new TabEventArgs()
+            {
+                item = (this.Parent as TabItem),
+                TabControl = (this.Parent as TabItem).Parent as TabControl,
+            });
         }
 
         private void lblToProjects_GotFocus(object sender, RoutedEventArgs e)
         {
-            ToProjects?.Invoke(this, this.Parent as TabItem);
+            ToProjects?.Invoke(this, new TabEventArgs()
+            {
+                item = (this.Parent as TabItem),
+                TabControl = (this.Parent as TabItem).Parent as TabControl,
+            });
         }
 
         private void lblToDocs_GotFocus(object sender, RoutedEventArgs e)
         {
-            ToDocuments?.Invoke(this, this.Parent as TabItem);
+            ToDocuments?.Invoke(this, new TabEventArgs()
+            {
+                item = (this.Parent as TabItem),
+                TabControl = (this.Parent as TabItem).Parent as TabControl,
+            });
         }
 
         private void lblToClients_GotFocus(object sender, RoutedEventArgs e)
         {
-            ToClients?.Invoke(this, this.Parent as TabItem);
+            ToClients?.Invoke(this, new TabEventArgs()
+            {
+                item = (this.Parent as TabItem),
+                TabControl = (this.Parent as TabItem).Parent as TabControl,
+            });
         }
 
         private void lblToEmployees_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var type = this.Parent.GetType();
-            ToEmployees?.Invoke(this, this.Parent as TabItem);
+            try
+            {
+                var type = this.Parent.GetType();
+                ToEmployees?.Invoke(this, new TabEventArgs()
+                {
+                    item = (this.Parent as TabItem),
+                    TabControl = (this.Parent as TabItem).Parent as TabControl,
+                });
+            }
+            catch (Exception) { }
         }
 
         private void lblToProjects_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ToProjects?.Invoke(this, this.Parent as TabItem);
+            ToProjects?.Invoke(this, new TabEventArgs()
+            {
+                item = (this.Parent as TabItem),
+                TabControl = (this.Parent as TabItem).Parent as TabControl,
+            });
         }
 
         private void lblToDocs_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ToDocuments?.Invoke(this, this.Parent as TabItem);
+            ToDocuments?.Invoke(this, new TabEventArgs()
+            {
+                item = (this.Parent as TabItem),
+                TabControl = (this.Parent as TabItem).Parent as TabControl,
+            });
         }
 
         private void lblToClients_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ToClients?.Invoke(this, this.Parent as TabItem);
+            ToClients?.Invoke(this, new TabEventArgs()
+            {
+                item = (this.Parent as TabItem),
+                TabControl = (this.Parent as TabItem).Parent as TabControl,
+            });
         }
     }
 }

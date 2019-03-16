@@ -24,5 +24,8 @@ namespace СЭД_ЭК
         {
             InitializeComponent();
         }
+
+        public string begin_Date { get=>lblBeginDate.Content.ToString(); set=>lblBeginDate.Content=value; }
+        public string end_Date { get => lblEndDate.Content.ToString(); set => lblEndDate.Content = value; }
     }
 }
